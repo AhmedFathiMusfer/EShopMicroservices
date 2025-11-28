@@ -1,0 +1,48 @@
+@Catalog_Api_HostAddress = http://localhost:5119
+
+ POST  {{Catalog_Api_HostAddress}}/catalog
+ Accept: application/json#
+
+###
+POST {{Catalog_Api_HostAddress}}/products
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Name": "Laptop",
+  "Description": "A high-end gaming laptop",
+  "Category": ["Electronics", "Computers"],
+  "Price": 2500.00
+}
+
+###
+PUt {{Catalog_Api_HostAddress}}/products
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id":"019a93db-b19d-4319-bc65-7ccef6b10792",
+  "Name": "Laptop",
+  "Description": "A high-end gaming laptop",
+  "Category": ["Electronics"],
+  "Price": 2500.00
+}
+###
+DELETE {{Catalog_Api_HostAddress}}/products/019a93db-b19d-4319-bc65-7ccef6b10792
+Accept: application/json
+Content-Type: application/json
+###
+GEt {{Catalog_Api_HostAddress}}/products
+Accept: application/json
+Content-Type: application/json
+
+###
+GEt {{Catalog_Api_HostAddress}}/products/019a93db-b19d-4319-bc65-7ccef6b10792
+Accept: application/json
+Content-Type: application/json
+
+
+###
+GEt {{Catalog_Api_HostAddress}}/products/category/Computers
+Accept: application/json
+Content-Type: application/json
