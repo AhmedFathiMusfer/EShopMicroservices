@@ -1,3 +1,5 @@
+using Basket.Api.Data;
+using Basket.Api.Models;
 using BuildingBlocks.Behavior;
 using BuildingBlocks.Exceptions.Handler;
 using Carter;
@@ -22,8 +24,10 @@ builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddMarten(mr =>
 {
     mr.Connection(builder.Configuration.GetConnectionString("connection-string") ?? "");
-});
+    mr.Schema.For<ShoppingCard>().Identity(x => x.UserName);
 
+}).UseLightweightSessions();
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
@@ -36,6 +40,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapCarter();
+app.UseExceptionHandler(options => { });
 
 app.Run();
 

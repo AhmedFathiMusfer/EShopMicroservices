@@ -1,5 +1,5 @@
 
-
+using Basket.Api.Data;
 using Basket.Api.Models;
 using BuildingBlocks.CQRS;
 using FluentValidation;
@@ -19,12 +19,12 @@ namespace Basket.Api.Basket.StoreBasket
         }
     }
 
-    public class StoreBasketHandler : ICommndHandler<StoreBasketCommand, StoreBasketResult>
+    public class StoreBasketHandler(IBasketRepository repository) : ICommndHandler<StoreBasketCommand, StoreBasketResult>
     {
         public async Task<StoreBasketResult> Handle(StoreBasketCommand command, CancellationToken cancellationToken)
         {
-            ShoppingCard cart = command.Cart;
-            return new StoreBasketResult("msm");
+            var cart = await repository.StoreBasket(command.Cart, cancellationToken);
+            return new StoreBasketResult(cart.UserName);
         }
     }
 }
