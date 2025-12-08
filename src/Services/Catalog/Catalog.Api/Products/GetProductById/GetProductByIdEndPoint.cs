@@ -23,7 +23,7 @@ namespace Catalog.Api.Products.GetProductById
                 var respons = result.Adapt<GetProductByIdResponse>();
                 return Results.Ok(respons);
             }).WithName("Get Product by id").Produces<GetProductsResponse>(StatusCodes.Status200OK).
-            ProducesProblem(StatusCodes.Status400BadRequest).WithSummary("Get Product by id").WithDescription("Get Product by id").WithDescription("Get Product by id"); ;
+            ProducesProblem(StatusCodes.Status400BadRequest).WithSummary("Get Product by id");
         }
     }
 }

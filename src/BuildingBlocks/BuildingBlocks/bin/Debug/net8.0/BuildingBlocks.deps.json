@@ -9,7 +9,9 @@
       "BuildingBlocks/1.0.0": {
         "dependencies": {
           "FluentValidation": "12.1.0",
+          "FluentValidation.AspNetCore": "11.3.1",
           "FluentValidation.DependencyInjectionExtensions": "12.1.0",
+          "Mapster": "7.4.2-pre02",
           "MediatR": "8.2.0"
         },
         "runtime": {
@@ -21,6 +23,18 @@
           "lib/net8.0/FluentValidation.dll": {
             "assemblyVersion": "12.0.0.0",
             "fileVersion": "12.1.0.0"
+          }
+        }
+      },
+      "FluentValidation.AspNetCore/11.3.1": {
+        "dependencies": {
+          "FluentValidation": "12.1.0",
+          "FluentValidation.DependencyInjectionExtensions": "12.1.0"
+        },
+        "runtime": {
+          "lib/net6.0/FluentValidation.AspNetCore.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.3.1.0"
           }
         }
       },
@@ -36,6 +50,25 @@
           }
         }
       },
+      "Mapster/7.4.2-pre02": {
+        "dependencies": {
+          "Mapster.Core": "1.2.3-pre02"
+        },
+        "runtime": {
+          "lib/net8.0/Mapster.dll": {
+            "assemblyVersion": "7.4.2.0",
+            "fileVersion": "7.4.2.0"
+          }
+        }
+      },
+      "Mapster.Core/1.2.3-pre02": {
+        "runtime": {
+          "lib/net8.0/Mapster.Core.dll": {
+            "assemblyVersion": "1.2.3.0",
+            "fileVersion": "1.2.3.0"
+          }
+        }
+      },
       "MediatR/8.2.0": {
         "runtime": {
           "lib/netstandard2.1/MediatR.dll": {
@@ -44,14 +77,7 @@
           }
         }
       },
-      "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "assemblyVersion": "2.1.0.0",
-            "fileVersion": "2.1.0.18136"
-          }
-        }
-      }
+      "Microsoft.Extensions.DependencyInjection.Abstractions/2.1.0": {}
     }
   },
   "libraries": {
@@ -67,12 +93,33 @@
       "path": "fluentvalidation/12.1.0",
       "hashPath": "fluentvalidation.12.1.0.nupkg.sha512"
     },
+    "FluentValidation.AspNetCore/11.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FjkfrGGwC+25oH8QpX1ti3gxkFjDDtotkAQWyQz2CkwQwEfRKTANjhh77I79kY8dov2ydK1SY+e4jiOWsbbDdQ==",
+      "path": "fluentvalidation.aspnetcore/11.3.1",
+      "hashPath": "fluentvalidation.aspnetcore.11.3.1.nupkg.sha512"
+    },
     "FluentValidation.DependencyInjectionExtensions/12.1.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-p9ZnpVCUvkelSfqFYZP9aMtnuRlDRkrAAPqjQGG+1mVVn8zxE0bc1/RAFRBZKsPglbMBQOx8wXOZhg2fGstacQ==",
       "path": "fluentvalidation.dependencyinjectionextensions/12.1.0",
       "hashPath": "fluentvalidation.dependencyinjectionextensions.12.1.0.nupkg.sha512"
+    },
+    "Mapster/7.4.2-pre02": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ry6YPGImX4aL0+Jj0rn46vqYOxzeyKOdlr6LUPvby1NLc68E5T2gRhDVWxvFexgZGOIW/U8NM87kygE4xl7Qvw==",
+      "path": "mapster/7.4.2-pre02",
+      "hashPath": "mapster.7.4.2-pre02.nupkg.sha512"
+    },
+    "Mapster.Core/1.2.3-pre02": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FDVPfGvCz1RRb1PYeoddiJftxo+ANAifiaqkZbH2kijZT2GcoR1w6byLQ8Czc9YBuNZqHHV4LKeXZA+eoFuCTw==",
+      "path": "mapster.core/1.2.3-pre02",
+      "hashPath": "mapster.core.1.2.3-pre02.nupkg.sha512"
     },
     "MediatR/8.2.0": {
       "type": "package",

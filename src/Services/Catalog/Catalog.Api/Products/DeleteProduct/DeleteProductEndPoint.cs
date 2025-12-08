@@ -22,7 +22,7 @@ namespace Catalog.Api.Products.DeleteProduct
 
 
             }).WithName("delete Product").Produces<DeleteProductRespons>(StatusCodes.Status200OK).
-            ProducesProblem(StatusCodes.Status400BadRequest).WithSummary("delete Product").WithDescription("update Product").WithDescription("update Product");
+            ProducesProblem(StatusCodes.Status400BadRequest).WithSummary("delete Product").WithDescription("delete Product").WithDescription("delete Product");
         }
 
     }

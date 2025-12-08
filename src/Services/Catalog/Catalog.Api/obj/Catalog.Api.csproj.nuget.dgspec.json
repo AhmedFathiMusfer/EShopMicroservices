@@ -57,6 +57,10 @@
               "target": "Package",
               "version": "[12.1.0, )"
             },
+            "Mapster": {
+              "target": "Package",
+              "version": "[7.4.2-pre02, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[8.2.0, )"
