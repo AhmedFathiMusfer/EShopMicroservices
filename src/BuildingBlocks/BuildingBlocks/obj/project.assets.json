@@ -226,11 +226,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+      "projectUniqueName": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
       "projectName": "BuildingBlocks",
-      "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+      "projectPath": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
       "packagesPath": "C:\\Users\\AhmedMusfer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
+      "outputPath": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AhmedMusfer\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {}
+    "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Discount\\Discount.Grpc\\Discount.Grpc.csproj": {}
   },
   "projects": {
-    "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+    "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Discount\\Discount.Grpc\\Discount.Grpc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
-        "projectName": "BuildingBlocks",
-        "projectPath": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Discount\\Discount.Grpc\\Discount.Grpc.csproj",
+        "projectName": "Discount.Grpc",
+        "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Discount\\Discount.Grpc\\Discount.Grpc.csproj",
         "packagesPath": "C:\\Users\\AhmedMusfer\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
+        "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Discount\\Discount.Grpc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AhmedMusfer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,25 +45,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "FluentValidation": {
+            "Grpc.AspNetCore": {
               "target": "Package",
-              "version": "[12.1.0, )"
-            },
-            "FluentValidation.AspNetCore": {
-              "target": "Package",
-              "version": "[11.3.1, )"
-            },
-            "FluentValidation.DependencyInjectionExtensions": {
-              "target": "Package",
-              "version": "[12.1.0, )"
-            },
-            "Mapster": {
-              "target": "Package",
-              "version": "[7.4.2-pre02, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[8.2.0, )"
+              "version": "[2.57.0, )"
             }
           },
           "imports": [
@@ -78,6 +62,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
