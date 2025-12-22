@@ -1,14 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Carter;
 using Catalog.Api.Model;
 using Catalog.Api.Products.GetProducts;
 using Mapster;
 using MediatR;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.Api.Products.GetProductById
 {

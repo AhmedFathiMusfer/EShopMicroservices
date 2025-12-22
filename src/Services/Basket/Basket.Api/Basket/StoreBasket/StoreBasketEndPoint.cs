@@ -1,5 +1,3 @@
-
-using System.Net;
 using Basket.Api.Models;
 using Carter;
 using Mapster;

@@ -5,7 +5,6 @@ using BuildingBlocks.Exceptions.Handler;
 using Carter;
 using FluentValidation;
 using HealthChecks.UI.Client;
-using JasperFx.Core.Reflection;
 using Marten;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 

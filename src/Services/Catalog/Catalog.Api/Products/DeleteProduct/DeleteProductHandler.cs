@@ -1,7 +1,6 @@
 
 
 using BuildingBlocks.CQRS;
-using Catalog.Api.Exceptions;
 using Catalog.Api.Model;
 using FluentValidation;
 using Marten;

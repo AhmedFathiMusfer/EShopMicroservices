@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {}
+    "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {}
   },
   "projects": {
-    "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
+    "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
         "projectName": "BuildingBlocks",
-        "projectPath": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
+        "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj",
         "packagesPath": "C:\\Users\\AhmedMusfer\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
+        "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AhmedMusfer\\AppData\\Roaming\\NuGet\\NuGet.Config",
