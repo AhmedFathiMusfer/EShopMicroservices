@@ -218,3 +218,8 @@ C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\Basket.Api\bin\Debug
 C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\Basket.Api\bin\Debug\net8.0\System.Text.Encodings.Web.dll
 C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\Basket.Api\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\Basket.Api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\Basket.Api\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.Core.Api.dll
+C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.Net.Client.dll
+C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\Basket.Api\bin\Debug\net8.0\Grpc.Net.Common.dll
+C:\Users\AhmedMusfer\EShopMicroservices\src\Services\Basket\basket.api\bin\Debug\net8.0\Grpc.Net.ClientFactory.dll

@@ -3,13 +3,16 @@ using Basket.Api.Models;
 using BuildingBlocks.Behavior;
 using BuildingBlocks.Exceptions.Handler;
 using Carter;
+using Discount.Grpc;
 using FluentValidation;
 using HealthChecks.UI.Client;
 using Marten;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
+//Appliction_service
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCarter();
 builder.Services.AddMediatR(cfg =>
@@ -22,6 +25,8 @@ builder.Services.AddMediatR(cfg =>
 });
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
+
+// Data_service
 builder.Services.AddMarten(mr =>
 {
     mr.Connection(builder.Configuration.GetConnectionString("DataBase") ?? "");
@@ -35,9 +40,11 @@ builder.Services.AddStackExchangeRedisCache(option =>
 {
     option.Configuration = builder.Configuration.GetConnectionString("Redis");
 });
-
-
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+//Grpc_service
+builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(o => o.Address = new Uri(builder.Configuration["GrpcSettings:Url"]!));
+
+//Cross_cuting_service
 builder.Services.AddSwaggerGen();
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DataBase") ?? "").AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 

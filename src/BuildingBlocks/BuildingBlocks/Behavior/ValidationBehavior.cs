@@ -6,7 +6,7 @@ namespace BuildingBlocks.Behavior;
 public class ValidationBehavior<TRquset, TResponse>(IEnumerable<IValidator<TRquset>> validators) : IPipelineBehavior<TRquset, TResponse>
  where TRquset : ICommand<TResponse>
 {
-    public async Task<TResponse> Handle(TRquset request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
+    public async Task<TResponse> Handle(TRquset request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
     {
         var context = new ValidationContext<TRquset>(request);
         var validateResult = await Task.WhenAll(validators.Select(v => v.ValidateAsync(context, cancellationToken)));

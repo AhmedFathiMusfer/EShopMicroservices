@@ -1,6 +1,40 @@
-@Basket.Api_HostAddress = http://localhost:5016
+@Basket_Api_HostAddress = http://localhost:5016
 
-GET {{Basket.Api_HostAddress}}/weatherforecast/
+GET {{Basket_Api_HostAddress}}/basket/ahmed
 Accept: application/json
 
 ###
+POST {{Basket_Api_HostAddress}}/basket
+Accept: application/json
+Content-Type: application/json
+
+{
+  "Cart": {
+    "UserName":"ahmed",
+    "Items":[
+  {
+    "quantity": 2,
+    "color": "Red",
+    "price": 300,
+    "productId": "a3f1c1b2-8f2a-4d3a-9a2d-111111111111",
+    "productName": "IPhone X"
+  },
+  {
+    "quantity": 1,
+    "color": "Black",
+    "price": 899.00,
+    "productId": "b7d9e4a1-2c44-4f91-8c3d-222222222222",
+    "productName": "Samsung S20"
+  },
+  {
+    "quantity": 3,
+    "color": "White",
+    "price": 300,
+    "productId": "c9a2d8e3-6f12-4a55-bd9a-333333333333",
+    "productName": "Samsung S20"
+  }
+]
+
+  }
+ 
+}

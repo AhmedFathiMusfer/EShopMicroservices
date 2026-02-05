@@ -32,13 +32,19 @@ services:
     ports:
       - "6379:6379"
 
-  # catalogapi:
-  #   image: catalogapi
-  #   build:
-  #     context: .
-  #     dockerfile: src/Services/Catalog/Catalog.Api/Dockerfile
-  #   ports:
-  #     - 5119:5119
+  catalogapi:
+    image: catalogapi
+    build:
+      context: .
+      dockerfile: src/Services/Catalog/Catalog.Api/Dockerfile
+      args:
+        - configuration=Debug
+    ports:
+      - 5119:5119
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
   pgadmin:
     image: dpage/pgadmin4
     container_name: my_pgadmin
