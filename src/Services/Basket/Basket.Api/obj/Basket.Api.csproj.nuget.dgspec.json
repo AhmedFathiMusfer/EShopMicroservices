@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\basket.api\\Basket.Api.csproj": {}
+    "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\Basket.Api\\Basket.Api.csproj": {}
   },
   "projects": {
     "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
@@ -86,14 +86,14 @@
         }
       }
     },
-    "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\basket.api\\Basket.Api.csproj": {
+    "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\Basket.Api\\Basket.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\basket.api\\Basket.Api.csproj",
+        "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\Basket.Api\\Basket.Api.csproj",
         "projectName": "Basket.Api",
-        "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\basket.api\\Basket.Api.csproj",
+        "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\Basket.Api\\Basket.Api.csproj",
         "packagesPath": "C:\\Users\\AhmedMusfer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\basket.api\\obj\\",
+        "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Basket\\Basket.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\AhmedMusfer\\AppData\\Roaming\\NuGet\\NuGet.Config",
