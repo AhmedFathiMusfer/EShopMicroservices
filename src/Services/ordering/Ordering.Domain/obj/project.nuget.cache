@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t8uP+uYwCek=",
+  "dgSpecHash": "Vx+4uiqdDzM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\ordering\\Ordering.Domain\\Ordering.Domain.csproj",
+  "projectFilePath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AhmedMusfer\\.nuget\\packages\\mediatr\\14.0.0\\mediatr.14.0.0.nupkg.sha512",
     "C:\\Users\\AhmedMusfer\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",

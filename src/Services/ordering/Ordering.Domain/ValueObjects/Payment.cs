@@ -4,7 +4,7 @@ namespace Ordering.Domain.ValueObjects
 {
     public record Payment
     {
-        public string? CardNmae { get; } = default!;
+        public string? CardName { get; } = default!;
         public string CardNumber { get; } = default!;
 
         public string Expiration { get; } = default!;

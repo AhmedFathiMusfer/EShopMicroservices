@@ -1,10 +1,13 @@
 
+using Microsoft.Extensions.DependencyInjection;
+
 namespace Ordering.Application
 {
-    public class DependencyInjection
+    public static class DependencyInjection
     {
-        static IServesCollection AddApplicationSevcies(this IServesCollection service)  {
-               return service;
+        public static IServiceCollection AddApplicationSevcies(this IServiceCollection service)
+        {
+            return service;
         }
     }
 }

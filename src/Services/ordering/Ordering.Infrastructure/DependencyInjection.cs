@@ -1,11 +1,14 @@
 
 
+using Microsoft.Extensions.DependencyInjection;
+
 namespace Ordering.Infrastructure
 {
-    public class DependencyInjection
+    public static class DependencyInjection
     {
-         static IServesCollection AddInfrastructreSevcies(this IServesCollection service)  {
-               return service;
+        public static IServiceCollection AddInfrastructreSevcies(this IServiceCollection service)
+        {
+            return service;
         }
     }
 }

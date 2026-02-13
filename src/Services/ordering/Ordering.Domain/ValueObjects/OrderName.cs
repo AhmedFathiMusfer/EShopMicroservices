@@ -6,9 +6,9 @@ namespace Ordering.Domain.ValueObjects
     {
         public string Value { get; }
         private const int DefaultLength = 4;
-        private OrderName(Guid value) => Value = value;
+        private OrderName(string value) => Value = value;
 
-        public static OrderName Of(Guid value)
+        public static OrderName Of(string value)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(value);
             ArgumentOutOfRangeException.ThrowIfNotEqual(value.Length, DefaultLength);
