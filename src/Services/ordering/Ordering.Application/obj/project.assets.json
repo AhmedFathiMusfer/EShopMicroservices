@@ -617,11 +617,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
+      "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Application\\Ordering.Application.csproj",
       "projectName": "Ordering.Application",
-      "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj",
+      "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Application\\Ordering.Application.csproj",
       "packagesPath": "C:\\Users\\AhmedMusfer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\obj\\",
+      "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AhmedMusfer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -641,8 +641,8 @@
             "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj": {
               "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\BuildingBlocks\\BuildingBlocks\\BuildingBlocks.csproj"
             },
-            "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj": {
-              "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Domain\\Ordering.Domain.csproj"
+            "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Domain\\Ordering.Domain.csproj": {
+              "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Domain\\Ordering.Domain.csproj"
             }
           }
         }

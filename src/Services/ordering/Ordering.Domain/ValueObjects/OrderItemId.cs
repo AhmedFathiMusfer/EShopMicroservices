@@ -1,4 +1,6 @@
 
+using Ordering.Domain.Exceptions;
+
 namespace Ordering.Domain.ValueObjects
 {
     public record OrderItemId
@@ -11,7 +13,7 @@ namespace Ordering.Domain.ValueObjects
             ArgumentNullException.ThrowIfNull(value);
             if (value == Guid.Empty)
             {
-                throw new DomainEception("OrderItemId can not be empty.");
+                throw new DomainException("OrderItemId can not be empty.");
             }
 
             return new OrderItemId(value);

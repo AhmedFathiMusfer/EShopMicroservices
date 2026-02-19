@@ -31,7 +31,15 @@ services:
     restart: always
     ports:
       - "6379:6379"
-
+  orderDb:
+    image: mcr.microsoft.com/mssql/server
+    container_name: orderDb
+    environment:
+      - ACCEPT_EULA=Y
+      - AH-PASSWORD=Ah7763233
+    restart: always
+    ports:
+      - "1433:1433"
   catalogapi:
     image: catalogapi
     build:

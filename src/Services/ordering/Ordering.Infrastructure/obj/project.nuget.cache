@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P6kqjT80/2U=",
+  "dgSpecHash": "f4AQMq93sWw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\AhmedMusfer\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\AhmedMusfer\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

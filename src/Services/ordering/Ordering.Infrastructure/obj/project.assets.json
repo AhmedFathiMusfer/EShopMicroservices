@@ -3959,11 +3959,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
       "projectName": "Ordering.Infrastructure",
-      "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Infrastructure\\Ordering.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\AhmedMusfer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\AhmedMusfer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3980,8 +3980,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj": {
-              "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\Services\\Ordering\\Ordering.Application\\Ordering.Application.csproj"
+            "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Application\\Ordering.Application.csproj": {
+              "projectPath": "C:\\Users\\AhmedMusfer\\EShopMicroservices\\src\\services\\ordering\\Ordering.Application\\Ordering.Application.csproj"
             }
           }
         }
