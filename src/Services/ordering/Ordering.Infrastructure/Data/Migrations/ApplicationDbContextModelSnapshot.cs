@@ -143,8 +143,8 @@ namespace Ordering.Infrastructure.Data.Migrations
 
                             b1.Property<string>("CVV")
                                 .IsRequired()
-                                .HasMaxLength(0)
-                                .HasColumnType("nvarchar(0)");
+                                .HasMaxLength(3)
+                                .HasColumnType("nvarchar(3)");
 
                             b1.Property<string>("CardName")
                                 .IsRequired()

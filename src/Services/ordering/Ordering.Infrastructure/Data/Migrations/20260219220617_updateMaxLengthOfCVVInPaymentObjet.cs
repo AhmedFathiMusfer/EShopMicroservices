@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ordering.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class initialCtrate : Migration
+    public partial class updateMaxLengthOfCVVInPaymentObjet : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -61,7 +61,7 @@ namespace Ordering.Infrastructure.Data.Migrations
                     BillingAddress_State = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     BillingAddress_ZibCode = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     OrderName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Payment_CVV = table.Column<string>(type: "nvarchar(0)", maxLength: 0, nullable: false),
+                    Payment_CVV = table.Column<string>(type: "nvarchar(3)", maxLength: 3, nullable: false),
                     Payment_CardName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Payment_CardNumber = table.Column<string>(type: "nvarchar(24)", maxLength: 24, nullable: false),
                     Payment_Expiration = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),

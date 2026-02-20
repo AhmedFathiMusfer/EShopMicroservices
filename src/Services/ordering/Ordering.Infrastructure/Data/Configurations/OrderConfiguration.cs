@@ -45,7 +45,7 @@ namespace Ordering.Infrastructure.Configurations
                                   paymentBuilder.Property(o => o.CardName).HasMaxLength(50).IsRequired();
                                   paymentBuilder.Property(o => o.CardNumber).HasMaxLength(24).IsRequired();
                                   paymentBuilder.Property(o => o.Expiration).HasMaxLength(10).IsRequired();
-                                  paymentBuilder.Property(o => o.CVV).HasMaxLength(0).IsRequired();
+                                  paymentBuilder.Property(o => o.CVV).HasMaxLength(3).IsRequired();
                                   paymentBuilder.Property(o => o.PaymentMethod).HasMaxLength(50).IsRequired();
 
                               });

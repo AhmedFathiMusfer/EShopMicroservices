@@ -13,8 +13,8 @@ using Ordering.Infrastructure.Data;
 namespace Ordering.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20260219202609_initialCtrate")]
-    partial class initialCtrate
+    [Migration("20260219220617_updateMaxLengthOfCVVInPaymentObjet")]
+    partial class updateMaxLengthOfCVVInPaymentObjet
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -146,8 +146,8 @@ namespace Ordering.Infrastructure.Data.Migrations
 
                             b1.Property<string>("CVV")
                                 .IsRequired()
-                                .HasMaxLength(0)
-                                .HasColumnType("nvarchar(0)");
+                                .HasMaxLength(3)
+                                .HasColumnType("nvarchar(3)");
 
                             b1.Property<string>("CardName")
                                 .IsRequired()
