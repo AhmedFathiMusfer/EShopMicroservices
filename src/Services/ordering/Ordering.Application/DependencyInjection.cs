@@ -12,8 +12,9 @@ namespace Ordering.Application
             service.AddMediatR(option =>
             {
                 option.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
-                option.AddOpenRequestPreProcessor(typeof(LoggingBehavior<,>));
                 option.AddOpenBehavior(typeof(ValidationBehavior<,>));
+                option.AddOpenBehavior(typeof(LoggingBehavior<,>));
+
 
             });
             return service;

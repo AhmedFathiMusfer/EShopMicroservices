@@ -1,0 +1,24 @@
+
+
+using BuildingBlocks.CQRS;
+using BuildingBlocks.Pagination;
+using Microsoft.EntityFrameworkCore;
+using Ordering.Application.Data;
+using Ordering.Application.Dtos;
+using Ordering.Application.Extentions;
+
+namespace Ordering.Application.Queries.GetOrders
+{
+    public class GetOrdersHandler(IApplictionDbContext dbContext) : IQueryHandler<GetOrdersQuery, GetOrdersResult>
+    {
+        public async Task<GetOrdersResult> Handle(GetOrdersQuery query, CancellationToken cancellationToken)
+        {
+            var pageIndex = query.PaginationRequest.PageIndex;
+            var pageSize = query.PaginationRequest.PageSize;
+            var count = await dbContext.orders.LongCountAsync(cancellationToken);
+            var orders = await dbContext.orders.AsNoTracking().Include(o => o.OrderItems).OrderBy(o => o.OrderName).Skip(pageIndex * pageSize).Take(pageSize).ToListAsync(cancellationToken);
+            return new GetOrdersResult(new PaginationResult<OrderDto>(pageIndex, pageSize, count, orders.ToOrderDtoList()));
+
+        }
+    }
+}

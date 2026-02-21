@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplicationSevcies();
 builder.Services.AddInfrastructreSevcies(builder.Configuration);
-builder.Services.AddApiSevcies();
+builder.Services.AddApiSevcies(builder.Configuration);
 
 var app = builder.Build();
 
