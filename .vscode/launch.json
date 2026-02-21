@@ -2,6 +2,22 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Ordering",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/Services/ordering/Ordering.Api/obj/Debug/net8.0/Ordering.Api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/src/Services/ordering/Ordering.Api",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
       "name": "Discount",
       "type": "coreclr",
       "request": "launch",
