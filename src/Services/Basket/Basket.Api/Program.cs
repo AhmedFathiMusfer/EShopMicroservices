@@ -2,6 +2,7 @@ using Basket.Api.Data;
 using Basket.Api.Models;
 using BuildingBlocks.Behavior;
 using BuildingBlocks.Exceptions.Handler;
+using BuildingBlocks.Messaging.Extentions;
 using Carter;
 using Discount.Grpc;
 using FluentValidation;
@@ -43,7 +44,8 @@ builder.Services.AddStackExchangeRedisCache(option =>
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 //Grpc_service
 builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(o => o.Address = new Uri(builder.Configuration["GrpcSettings:Url"]!));
-
+// Async Communcation Services
+builder.Services.AddMessageBroker(builder.Configuration);
 //Cross_cuting_service
 builder.Services.AddSwaggerGen();
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DataBase") ?? "").AddRedis(builder.Configuration.GetConnectionString("Redis")!);
