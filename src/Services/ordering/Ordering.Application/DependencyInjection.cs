@@ -1,13 +1,16 @@
 
 using System.Reflection;
 using BuildingBlocks.Behavior;
+using BuildingBlocks.Messaging.Extentions;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.FeatureManagement;
 
 namespace Ordering.Application
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddApplicationSevcies(this IServiceCollection service)
+        public static IServiceCollection AddApplicationSevcies(this IServiceCollection service, IConfiguration configuration)
         {
             service.AddMediatR(option =>
             {
@@ -17,6 +20,8 @@ namespace Ordering.Application
 
 
             });
+            service.AddFeatureManagement();
+            service.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
             return service;
         }
     }

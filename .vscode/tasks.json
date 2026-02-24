@@ -44,12 +44,12 @@
       "dockerBuild": {
         "tag": "eshopmicroservices:dev",
         "target": "base",
-        "dockerfile": "${workspaceFolder}/src/Services/Catalog/Catalog.Api/Dockerfile",
+        "dockerfile": "${workspaceFolder}/src/Services/ordering/Ordering.Api/Dockerfile",
         "context": "${workspaceFolder}",
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/src/Services/Catalog/Catalog.Api/Catalog.Api.csproj"
+        "appProject": "${workspaceFolder}/src/Services/ordering/Ordering.Api/Ordering.Api.csproj"
       }
     },
     {
@@ -58,7 +58,7 @@
       "dependsOn": ["build"],
       "dockerBuild": {
         "tag": "eshopmicroservices:latest",
-        "dockerfile": "${workspaceFolder}/src/Services/Catalog/Catalog.Api/Dockerfile",
+        "dockerfile": "${workspaceFolder}/src/Services/ordering/Ordering.Api/Dockerfile",
         "context": "${workspaceFolder}",
         "platform": {
           "os": "linux",
@@ -67,7 +67,7 @@
         "pull": true
       },
       "netCore": {
-        "appProject": "${workspaceFolder}/src/Services/Catalog/Catalog.Api/Catalog.Api.csproj"
+        "appProject": "${workspaceFolder}/src/Services/ordering/Ordering.Api/Ordering.Api.csproj"
       }
     },
     {
@@ -76,7 +76,7 @@
       "dependsOn": ["docker-build: debug"],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/src/Services/Catalog/Catalog.Api/Catalog.Api.csproj",
+        "appProject": "${workspaceFolder}/src/Services/ordering/Ordering.Api/Ordering.Api.csproj",
         "enableDebugging": true
       }
     },
@@ -86,7 +86,7 @@
       "dependsOn": ["docker-build: release"],
       "dockerRun": {},
       "netCore": {
-        "appProject": "${workspaceFolder}/src/Services/Catalog/Catalog.Api/Catalog.Api.csproj"
+        "appProject": "${workspaceFolder}/src/Services/ordering/Ordering.Api/Ordering.Api.csproj"
       }
     }
   ]
