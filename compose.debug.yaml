@@ -8,11 +8,47 @@ services:
       args:
         - configuration=Debug
     ports:
-      - 5119:5119
+      - 6000:8080
+      - 6060:8081
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS= 8080
+      - ASPNETCORE_HTTPS_PORTS= 8081
+      - ConnectionStrings__Database=server=catalogDb;port=5432;database=catalogDb;user id=user;password=password;
+    depends_on:
+      - catalogDb
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
+  basketapi:
+    image: basketapi
+    build:
+      context: .
+      dockerfile: src/Services/Basket/Basket.Api/Dockerfile
+      args:
+        - configuration=Debug
+    ports:
+      - 6001:8080
+      - 6061:8081
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS= 8080
+      - ASPNETCORE_HTTPS_PORTS= 8081
+      - ConnectionStrings__Database=server=basketDb;port=5432;database=basketDb;user id=user;password=password;
+      - MessageBroker__Host=amqp://ecommerce_mq:5672
+      - MessageBroker__UserName=guest
+      - MessageBroker__Password=guest
+      - ConnectionStrings__Redis=distributedcache:6379
+      - GrpcSettings__Url=http://discountgrpc:8080
+    depends_on:
+      - basketDb
+      - distributedcache
+      - discountgrpc
+      - messageBroker
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
   orderingapi:
     image: orderingapi
     build:
@@ -21,12 +57,24 @@ services:
       args:
         - configuration=Debug
     ports:
-      - 8080:8080
-      - 8081:8081
+      - 6003:8080
+      - 6063:8081
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS= 8080
+      - ASPNETCORE_HTTPS_PORTS= 8081
+      - ConnectionStrings__Database=orderDb;Database=orderDb;User Id=sa ;Password=Ah7763233; Encrypt=False;TrustServerCertificate=True
+      - MessageBroker__Host=amqp://ecommerce_mq:5672
+      - MessageBroker__UserName=guest
+      - MessageBroker__Password=guest
+      - FeatureManagement__OrderFullfilment=false
+    depends_on:
+      - orderDb
+      - messageBroker
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
 
   discountgrpc:
     image: discountgrpc
@@ -36,8 +84,83 @@ services:
       args:
         - configuration=Debug
     ports:
-      - 5119:5119
+      - 6002:8080
+      - 6062:8081
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS= 8080
+      - ASPNETCORE_HTTPS_PORTS= 8081
+      - ConnectionStrings__Database=Data source=discountDb
+
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+  catalogDb:
+    image: postgres
+    container_name: catalogDb
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: catalogDb
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_catalog:/var/lib/postgresql/data
+  basketDb:
+    image: postgres
+    container_name: basketDb
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: basketDb
+    restart: always
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_basket:/var/lib/postgresql/data
+  distributedcache:
+    image: redis
+    container_name: distributedcache
+    restart: always
+    ports:
+      - "6379:6379"
+  orderDb:
+    image: mcr.microsoft.com/mssql/server
+    container_name: orderDb
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Ah7763233
+    restart: always
+    ports:
+      - "1433:1433"
+    # volumes:
+    #   - sqlServer_order:/var/opt/mssql/data
+  messageBroker:
+    image: rabbitmq:management
+    container_name: messageBroker
+    hostname: ecommerce_mq
+    environment:
+      - RABBITMQ_DEFAULT_PASS=guest
+      - RABBITMQ_DEFAULT_USER=guest
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: my_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - catalogDb
+      - basketDb
+volumes:
+  postgres_basket:
+  postgres_catalog:
+  sqlServer_order:
