@@ -20,6 +20,7 @@ namespace Ordering.Application
 
 
             });
+
             service.AddFeatureManagement();
             service.AddMessageBroker(configuration, Assembly.GetExecutingAssembly());
             return service;

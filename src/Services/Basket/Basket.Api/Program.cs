@@ -30,7 +30,7 @@ builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 // Data_service
 builder.Services.AddMarten(mr =>
 {
-    mr.Connection(builder.Configuration.GetConnectionString("DataBase") ?? "");
+    mr.Connection(builder.Configuration.GetConnectionString("Database") ?? "");
     mr.Schema.For<ShoppingCard>().Identity(x => x.UserName);
 
 }).UseLightweightSessions();
@@ -48,7 +48,7 @@ builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
 builder.Services.AddMessageBroker(builder.Configuration);
 //Cross_cuting_service
 builder.Services.AddSwaggerGen();
-builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("DataBase") ?? "").AddRedis(builder.Configuration.GetConnectionString("Redis")!);
+builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("Database") ?? "").AddRedis(builder.Configuration.GetConnectionString("Redis")!);
 
 
 var app = builder.Build();

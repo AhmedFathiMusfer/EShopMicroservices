@@ -40,30 +40,20 @@ services:
     restart: always
     ports:
       - "1433:1433"
+    volumes:
+      - sqlServer_order:/var/opt/mssql/data
   messageBroker:
     image: rabbitmq:management
-    container_name: messagebroker
-    hostName: ecommerce_mq
+    container_name: messageBroker
+    hostname: ecommerce_mq
     environment:
       - RABBITMQ_DEFAULT_PASS=guest
       - RABBITMQ_DEFAULT_USER=guest
     restart: always
-    ports: -"5672:5672"
-      -"15672:15672"
-
-  catalogapi:
-    image: catalogapi
-    build:
-      context: .
-      dockerfile: src/Services/Catalog/Catalog.Api/Dockerfile
-      args:
-        - configuration=Debug
     ports:
-      - 5119:5119
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    volumes:
-      - ~/.vsdbg:/remote_debugger:rw
+      - "5672:5672"
+      - "15672:15672"
+
   pgadmin:
     image: dpage/pgadmin4
     container_name: my_pgadmin
@@ -78,3 +68,4 @@ services:
 volumes:
   postgres_basket:
   postgres_catalog:
+  sqlServer_order:

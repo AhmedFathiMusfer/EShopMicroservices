@@ -23,9 +23,9 @@ builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddMarten((opt) =>
 {
-    opt.Connection(builder.Configuration.GetConnectionString("connection-string") ?? "");
+    opt.Connection(builder.Configuration.GetConnectionString("Database") ?? "");
 });
-builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("connection-string") ?? "");
+builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("Database") ?? "");
 if (builder.Environment.IsDevelopment())
     builder.Services.InitializeMartenWith<CatalogInitialData>();
 var app = builder.Build();
