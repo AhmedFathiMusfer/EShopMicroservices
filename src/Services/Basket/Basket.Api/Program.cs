@@ -1,5 +1,6 @@
 using Basket.Api.Data;
 using Basket.Api.Models;
+using BuildingBlocks.Authentication;
 using BuildingBlocks.Behavior;
 using BuildingBlocks.Exceptions.Handler;
 using BuildingBlocks.Messaging.Extentions;
@@ -16,6 +17,7 @@ var builder = WebApplication.CreateBuilder(args);
 //Appliction_service
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddCarter();
+builder.Services.AddJwtAuthentication(builder.Configuration, "basket");
 builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
@@ -60,8 +62,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.MapCarter();
 app.UseExceptionHandler(options => { });
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapCarter();
 app.UseHealthChecks("/health", new HealthCheckOptions()
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,

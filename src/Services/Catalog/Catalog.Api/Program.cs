@@ -2,6 +2,7 @@ using Carter;
 using MediatR;
 using Marten;
 using FluentValidation;
+using BuildingBlocks.Authentication;
 using BuildingBlocks.Behavior;
 using BuildingBlocks.Exceptions.Handler;
 using Catalog.Api.Data;
@@ -11,6 +12,7 @@ using HealthChecks.UI.Client;
 
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddJwtAuthentication(builder.Configuration, "catalog");
 builder.Services.AddCarter();
 builder.Services.AddMediatR(cfg =>
 {
@@ -28,13 +30,20 @@ builder.Services.AddMarten((opt) =>
 builder.Services.AddHealthChecks().AddNpgSql(builder.Configuration.GetConnectionString("Database") ?? "");
 if (builder.Environment.IsDevelopment())
     builder.Services.InitializeMartenWith<CatalogInitialData>();
+
 var app = builder.Build();
-app.MapCarter();
+
 app.UseExceptionHandler(options => { });
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapCarter();
+
 app.UseHealthChecks("/healthChe", new HealthCheckOptions
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
-}
-);
+});
+
 app.Run();
 

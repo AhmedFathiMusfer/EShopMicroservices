@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
@@ -34,6 +34,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.Infrastructure", "src\Services\Ordering\Ordering.Infrastructure\Ordering.Infrastructure.csproj", "{511826F5-36E8-4164-BE8D-5403DFCDDEE8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildingBlocks.Messaging", "src\BuildingBlocks\BuildingBlocks.Messaging\BuildingBlocks.Messaging.csproj", "{22AE7604-F00E-47D8-836B-C290E2254044}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{ABCDEF01-2345-6789-ABCD-EF0123456789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.Api", "src\Services\Identity\Identity.Api\Identity.Api.csproj", "{B1F0B9E0-6F4B-4D4F-A8C5-1234567890AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +84,10 @@ Global
 		{22AE7604-F00E-47D8-836B-C290E2254044}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22AE7604-F00E-47D8-836B-C290E2254044}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22AE7604-F00E-47D8-836B-C290E2254044}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1F0B9E0-6F4B-4D4F-A8C5-1234567890AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1F0B9E0-6F4B-4D4F-A8C5-1234567890AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1F0B9E0-6F4B-4D4F-A8C5-1234567890AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1F0B9E0-6F4B-4D4F-A8C5-1234567890AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7348EDDA-5353-4EBD-9902-9A489FB5BFC7} = {12F38F1D-A6CA-4F78-8501-BB3ADD8E861D}
@@ -97,5 +105,7 @@ Global
 		{84153117-54CB-4A69-B91B-4E86D0EDAAD1} = {FDC81C34-7F55-4F55-B0B7-FEAEE73142A3}
 		{511826F5-36E8-4164-BE8D-5403DFCDDEE8} = {FDC81C34-7F55-4F55-B0B7-FEAEE73142A3}
 		{22AE7604-F00E-47D8-836B-C290E2254044} = {7348EDDA-5353-4EBD-9902-9A489FB5BFC7}
+		{ABCDEF01-2345-6789-ABCD-EF0123456789} = {FD4DAACA-7B4F-4C30-8672-D9A84A36A253}
+		{B1F0B9E0-6F4B-4D4F-A8C5-1234567890AB} = {ABCDEF01-2345-6789-ABCD-EF0123456789}
 	EndGlobalSection
 EndGlobal

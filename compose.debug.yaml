@@ -15,8 +15,11 @@ services:
       - ASPNETCORE_HTTP_PORTS= 8080
       - ASPNETCORE_HTTPS_PORTS= 8081
       - ConnectionStrings__Database=server=catalogDb;port=5432;database=catalogDb;user id=user;password=password;
+      - Jwt__Authority=http://identityapi:8080
+      - Jwt__Audience=catalog
     depends_on:
       - catalogDb
+      - identityapi
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
   basketapi:
@@ -39,11 +42,14 @@ services:
       - MessageBroker__Password=guest
       - ConnectionStrings__Redis=distributedcache:6379
       - GrpcSettings__Url=http://discountgrpc:8080
+      - Jwt__Authority=http://identityapi:8080
+      - Jwt__Audience=basket
     depends_on:
       - basketDb
       - distributedcache
       - discountgrpc
       - messageBroker
+      - identityapi
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
@@ -68,9 +74,12 @@ services:
       - MessageBroker__UserName=guest
       - MessageBroker__Password=guest
       - FeatureManagement__OrderFullfilment=false
+      - Jwt__Authority=http://identityapi:8080
+      - Jwt__Audience=ordering
     depends_on:
       - orderDb
       - messageBroker
+      - identityapi
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
@@ -92,6 +101,22 @@ services:
       - ASPNETCORE_HTTPS_PORTS= 8081
       - ConnectionStrings__Database=Data source=discountDb
 
+    volumes:
+      - ~/.vsdbg:/remote_debugger:rw
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+  identityapi:
+    image: identityapi
+    build:
+      context: .
+      dockerfile: src/Services/Identity/Identity.Api/Dockerfile
+      args:
+        - configuration=Debug
+    ports:
+      - 6004:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS= 8080
     volumes:
       - ~/.vsdbg:/remote_debugger:rw
       - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro

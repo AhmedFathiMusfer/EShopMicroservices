@@ -20,7 +20,9 @@ namespace Catalog.Api.Products.CreateProduct
                 return Results.Created($"/product/{respons.Id}", respons);
 
 
-            }).WithName("createProduct").Produces<CreateProductRespons>(StatusCodes.Status201Created).
+            })
+            .RequireAuthorization()
+            .WithName("createProduct").Produces<CreateProductRespons>(StatusCodes.Status201Created).
             ProducesProblem(StatusCodes.Status400BadRequest).WithSummary("Create Product").WithDescription("Create Product").WithDescription("Create Product");
         }
 
